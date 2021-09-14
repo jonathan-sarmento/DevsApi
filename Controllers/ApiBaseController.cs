@@ -2,14 +2,17 @@ using DevsApi.API;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevsApi.Controllers
-{
-    public class ApiBaseController : ControllerBase
+{   
+    public abstract class ApiBaseController : ControllerBase
     {
         protected OkObjectResult ApiOk<T>(T Results) =>
             Ok(CustomResponse<T>(Results));
 
         protected OkObjectResult ApiOk(string Message = "") =>
             Ok(CustomResponse(true, Message));
+
+        protected CreatedResult ApiCreated(string uri,string Message = "") =>
+            Created(uri, CustomResponse(true, Message));
 
         protected NotFoundObjectResult ApiNotFound(string Message = "") =>
             NotFound(CustomResponse(false, Message));

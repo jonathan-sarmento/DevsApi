@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevsApi</name>
+    </assembly>
+    <members>
+        <member name="M:DevsApi.Controllers.AuthController.Register(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Creates a new user for the authentication.
+            </summary>
+            <param name="identityUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.AuthController.Token(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Get an access token for an authorized user.
+            </summary>
+            <param name="identityUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.DevsController.Index">
+            <summary>
+            Returns a list of all developers registered in database.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.DevsController.Get(System.Nullable{System.Int32})">
+            <summary>
+            Returns a specified developer according to ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.DevsController.Create(DevsApi.Models.Developer)">
+            <summary>
+            Creates a specified developer according to body data.
+            </summary>
+            <param name="developer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.DevsController.Update(DevsApi.Models.Developer)">
+            <summary>
+            Updates a specified developer according to body data.
+            </summary>
+            <param name="developer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.DevsController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Deletes a specified developer according to ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.DevsController.Random">
+            <summary>
+            Returns a random developer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DevsApi.Controllers.DevsController.ProductsByRole(System.String)">
+            <summary>
+            Returns a list of all developers created according to a specified role.
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

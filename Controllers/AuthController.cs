@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 
 namespace DevsApi.Controllers
 {
-
+    [Produces(MediaTypeNames.Application.Json)]
+    [Consumes(MediaTypeNames.Application.Json)]
     [Route("[controller]")]
     [ApiController]
     public class AuthController : ApiBaseController
@@ -22,6 +24,11 @@ namespace DevsApi.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Creates a new user for the authentication.
+        /// </summary>
+        /// <param name="identityUser"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Register")]
         [AllowAnonymous]
@@ -35,6 +42,11 @@ namespace DevsApi.Controllers
                 ApiBadRequest("Error in creation");
         }
 
+        /// <summary>
+        /// Get an access token for an authorized user.
+        /// </summary>
+        /// <param name="identityUser"></param>
+        /// <returns></returns>
         [HttpPost, Route("Token")]
         [AllowAnonymous]
         public IActionResult Token([FromBody] IdentityUser identityUser){
